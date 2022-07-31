@@ -1,0 +1,38 @@
+<section class="section border-top-g">
+  <div class="container">
+      <div class="row section-heading-02">
+          <div class="col-md-12">
+              <div class="section-title">
+                  <h3><span>My Skills</span></h3>
+                  <p>A Lead UX &amp; UI designer based in Canada</p>
+              </div>
+          </div>
+      </div>
+      <div class="row gy-4 justify-content-between">
+          <div class="col-lg-6">
+              <!-- skill -->
+              <div *ngFor="let x of skills" class="skill-lt">
+                  <h6 class="dark-color">{{x.name}}</h6>
+                  <div class="skill-bar">
+                      <div class="skill-bar-in theme-bg-g" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                          <span>{{x.score}}</span>
+                      </div>
+                  </div>
+              </div>
+              <!-- end skill -->
+          </div>
+          <div class="col-lg-5">
+              <div class="row gy-4">
+                  <div *ngFor="let x of skills" class="col-6">
+                      <div class="feature-box-04 media align-items-center">
+                          <div class="icon" [innerHtml]="x.icon"> </div>
+                          <div class="media-body">
+                              <h5>{{x.desc}}</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="phones row safe-area px-3 py-4 mt-5">
+    <div class="row section-heading-02">
+      <div class="col-md-12">
+          <div class="section-title">
+              <h3><span style="color: black;">List Phone</span></h3>
+          </div>
+      </div>
+    </div>
+
+    <div *ngFor="let item of products" class=" col-lg-3 col-md-4 col-sm-6 col-xs-12 px-2 pb-3">
+      <div class="card px-1 pt-1">
+          <div class="image">
+              <a routerLink="../phone/{{item.id}}"><img src="{{item.image_url}}" class="card-img-top" alt="..."></a>
+          </div>
+
+          <div class="card-body">
+              <a class="card-title" routerLink="../phone/{{item.id}}"><h5>{{item.name}}</h5></a>
+              <h5 class="text-danger">${{item.price}}</h5>
+              <a routerLink="../phone/{{item.id}}" class="px-btn px-btn-primary card-btn"><h5>Chi tiết</h5></a>
+          </div>
+      </div>
+    </div>
+</div>

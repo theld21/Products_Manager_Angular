@@ -1,0 +1,26 @@
+<section data-scroll-index="2" class="section services-section border-top-g">
+  <div class="container">
+      <div class="row section-heading-02">
+          <div class="col-md-12">
+              <div class="section-title">
+                  <h3><span>My Projects</span></h3>
+                  <p>A Lead UX &amp; UI designer based in Canada</p>
+              </div>
+          </div>
+      </div>
+      <div class="row gy-4">
+          <div *ngFor="let x of pjs" class="col-sm-6 col-lg-4">
+            <div class="feature-box-01 media">
+                <div class="icon"><i class="fas fa-pencil-alt"></i></div>
+                <div class="feature-content col">
+                    <h5><b>{{x.name}}</b></h5>
+                    <p>{{x.desc}}</p>
+                    <br>
+                    <p style="color: gray;"><b>Start: </b> {{x.start_date}}</p>
+                    <p style="color: gray;"><b>Finish: </b> {{x.end_date}}</p>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</section>

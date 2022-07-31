@@ -1,0 +1,51 @@
+.safe-area{
+    box-shadow: 0px 0px 8px -2px #b4b4b4;
+}
+.card{
+    border-radius: 10px;
+    transition: 0.2s;
+    text-align: center;
+    height: 100%;
+}
+.image{
+    overflow: hidden;
+    padding: 20px;
+}
+.btn-detail{
+    opacity: 0%;
+    bottom: 0px;
+}
+.btn-detail .btn{
+    width: 100%;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s, filter .5s ease-out;
+}
+a{
+    text-decoration: none;
+}
+.card-title{
+    color: black;
+}
+.card-btn h5{
+    line-height: 32px;
+    margin-bottom: 0;
+}
+.card-title:hover{
+    color: rgb(11, 11, 204);
+}
+.card:hover{
+    box-shadow: 0px 0px 8px 4px #929292;
+}
+.card:hover img{
+    transform: scale(1.1);
+}
+.card:hover .btn-detail{
+    opacity: 100%;
+}
+.card{
+  border: none;
+}

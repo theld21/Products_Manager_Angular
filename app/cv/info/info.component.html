@@ -1,0 +1,35 @@
+
+        <section data-scroll-index="1" class="section about-section-02 border-top-g">
+          <div class="container">
+              <div class="row section-heading-02">
+                  <div class="col-lg-6">
+                      <h3><span>About Me</span></h3>
+                  </div>
+              </div>
+              <div class="row align-items-center gy-4">
+                  <div class="col-lg-6">
+                      <div class="about-me-img">
+                          <img [src]="info.avatar" title="" alt="">
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="about-me ps-lg-5">
+                          <h4>{{info.name}}</h4>
+                          <h6 [innerHtml]="info.short_desc"></h6>
+                          <p [innerHtml]="info.desc"></p>
+                          <div class="row about-list">
+                              <div class="col-md-12">
+                                  <div *ngFor="let item of table"  class="media">
+                                      <label>{{item.name}}</label>
+                                      <p>{{item.value}}</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- <div class="btn-bar">
+                              <a class="px-btn px-btn-primary" href="#">Browse Resume <i class="bi bi-arrow-up-right"></i></a>
+                          </div> -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>

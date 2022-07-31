@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-12">
+          <div class="card my-4 safe-area px-4 py-4">
+
+            <div class="sidenav-footer mx-3 ">
+              <span class="btn bg-gradient-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="create()">New</span>
+            </div>
+
+            <div class="table-responsive p-0">
+              <table class="table align-items-center mb-0">
+                  <thead>
+                      <tr>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Score</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Icon</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Desc</th>
+                          <th class="text-secondary opacity-7"></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of tableItem" >
+                      <td style="padding-left: 25px;">
+                          <p class="text-xs font-weight-bold mb-0 ml-5">{{item.id}}</p>
+                      </td>
+                      <td>
+                          <p class="text-xs font-weight-bold mb-0 ml-5">{{item.name}}</p>
+                      </td>
+                      <td>
+                          <p class="text-xs font-weight-bold mb-0 ml-5">{{item.score}}</p>
+                      </td>
+                      <td>
+                          <p class="text-xs font-weight-bold mb-0 ml-5" [innerHtml]="item.icon" style="font-size: 30px;"></p>
+                      </td>
+                      <td>
+                          <p class="text-xs font-weight-bold mb-0 ml-5">{{item.desc}}</p>
+                      </td>
+                      <td class="align-middle">
+                          <span class="btn btn-outline-info btn-xs font-weight-bold text-xs mx-2 px-2 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(item)">Edit</span>
+                          <button class="btn btn-outline-primary btn-xs font-weight-bold px-3 py-2" (click)="remove(item.id)"><i class="fa-solid fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+          </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="modalValue" (ngSubmit)="onSubmitModal(modalValue.value)" >
+          <div class="row g-3 align-items-center mb-2">
+            <div class="col-12">
+              <label for="inputName" class="col-form-label">Name</label>
+              <input type="text" id="inputName" formControlName="name" [value]="modalValue.value.name" class="form-control">
+              <app-show-error [formField]="modalValue.get('name')" key="Tên"></app-show-error>
+            </div>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-12">
+              <label for="inputScore" class="col-form-label">Score </label>
+              <input type="number" id="inputScore" formControlName="score" [value]="modalValue.value.score" class="form-control">
+              <app-show-error [formField]="modalValue.get('score')" key="Điểm thông thạo"></app-show-error>
+            </div>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-12">
+              <label for="inputIcon" class="col-form-label">Icon </label>
+              <input type="text" id="inputIcon" formControlName="icon" [value]="modalValue.value.icon" class="form-control">
+              <app-show-error [formField]="modalValue.get('icon')" key="Icon"></app-show-error>
+            </div>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-12">
+              <label for="inputDesc" class="col-form-label">Desc </label>
+              <input type="text" id="inputDesc" formControlName="desc" [value]="modalValue.value.desc" class="form-control">
+              <app-show-error [formField]="modalValue.get('desc')" key="Mô tả"></app-show-error>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSubmitModal(modalValue.value)" [disabled]="modalValue.invalid">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

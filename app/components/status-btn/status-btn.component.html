@@ -1,0 +1,11 @@
+<button
+    *ngIf="status == 0"
+    class="badge badge-sm bg-gradient-danger btn"
+    (click)="onChangeStatus(1)"
+>Hide</button>
+
+<button
+    *ngIf="status == 1"
+    class="badge badge-sm bg-gradient-info btn"
+    (click)="onChangeStatus(0)"
+>Show</button>

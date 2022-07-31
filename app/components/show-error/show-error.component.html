@@ -1,0 +1,7 @@
+<div *ngIf="formField.dirty" class="text-danger">
+  <p *ngIf="formField.errors?.['required']" >{{key}} bắt buộc nhập</p>
+  <p *ngIf="formField.errors?.['minlength']" >{{key}} tối thiểu 6 ký tự</p>
+  <p *ngIf="formField.errors?.['email']" >{{key}} Phải có định dạng email</p>
+  <p *ngIf="formField.errors?.['min']" >{{key}} Phải lớn hơn hoặc bằng 0</p>
+  <p *ngIf="formField.errors?.['pattern']" >{{key}} Không phải định dạng url</p>
+</div>
